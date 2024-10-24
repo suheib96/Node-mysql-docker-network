@@ -23,4 +23,13 @@ app.get("/add", (req,res) => {
     res.send("Neuer Eintrag in die Datenbank erfolgreich gespeichert")
 })
 
+app.get("/all",(req,res) => {
+    connection.query("SELECT * FROM daten", (err,results) => {
+    if (err){
+        return res.status(500).send("Fehler beim auslesen der daten Tabelle")
+    }
+    res.json(results)
+    })
+})
+
 app.listen(5012)
