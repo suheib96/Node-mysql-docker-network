@@ -20,13 +20,13 @@ connection.query(`CREATE TABLE IF NOT EXISTS daten (
 
 app.get("/add", (req,res) => {
     connection.query(`INSERT INTO daten (logEintrag) VALUES ("Eintrag am ${new Date()}")` )
-    res.send("Neuer Eintrag in die Datenbank erfolgreich gespeichert")
+    res.send("Neuer Eintrag in die Datenbank erfolgreich gespeichert nach der app.js änderung!!!!")
 })
 
 app.get("/all",(req,res) => {
     connection.query("SELECT * FROM daten", (err,results) => {
     if (err){
-        return res.status(500).send("Fehler beim auslesen der daten Tabelle")
+        return res.status(500).send("Ich bin ein neuer Fehler")
     }
     res.json(results)
     })

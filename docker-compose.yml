@@ -18,6 +18,10 @@ services: #Container
   backend:
     build: ./
     container_name: mein-backend
+    volumes:
+    #Dieser Pfad muss bei euch angepasst werden
+      # - /Users/suheibmarzouka/Desktop/24-01-ON/Workspaces/Node-Mysql-Docker-network:/app 
+      - /app/node_modules
     networks:
       - beispiel-netzwerk
     ports:
